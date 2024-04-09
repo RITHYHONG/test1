@@ -4,8 +4,7 @@ import "./globals.css"
 const Layout = ({ children }) => {
   return (
     <div>
-      <NavbarComponent/>
-      
+      <NavbarComponent/> 
       <main>{children}</main>
     </div>
   );
