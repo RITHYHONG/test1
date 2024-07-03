@@ -15,7 +15,7 @@ const GetAllMovie = async () => {
             className="rounded-sm bg-white w-[20rem] shadow-xl p-5 flex-shrink-0 mr-3"
           >
             <figure>
-              <img className="h-[60%] w-[100%]" src={data.image ? data.image : defaultMoviepic} alt="Shoes" />
+              <img className="h-[60%] w-[100%]" src={data.image ? data.image : defaultMoviepic} alt={data.movie_title} />
             </figure>
             <div className="">
               <h1 className="card-title font-bold text-black text-xl line-clamp-1 ">

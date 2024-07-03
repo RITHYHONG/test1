@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+const defaultMoviepic = "../assets/default pic.jpg";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 library.add(fas);
 import { getMovieById } from "@/services/movie.service";
@@ -11,7 +12,6 @@ const MovieDetailPage = async ({ params }) => {
   const movieData = await getMovieById(params.movieId);
   console.log("get movie by title: ", movieData.payload.movie_title);
 
- 
   const data = movieData.payload; // const movieData = await getMovieById(data.movieId);
   const datetime = data.posted_at;
   const formatdatetime = moment(datetime).format("MM DD, YYYY, h:mm:ss A");
@@ -24,7 +24,7 @@ const MovieDetailPage = async ({ params }) => {
               <div class="rounded-lg pb-10">
                 <img
                   class="w-full h-full object-cover"
-                  src={data.image}
+                  src={data.image ? data.image : defaultMoviepic}
                   alt={data.movie_title}
                 />
               </div>
